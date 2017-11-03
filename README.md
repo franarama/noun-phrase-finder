@@ -4,9 +4,7 @@ This program utilities nltk to find the frequencies of noun phrases of the form:
 
 determiner adjective* noun+
 
-so one determiner, 0 or more adjectives, and 1 or more nouns.
-
-For an existing file inputted by the user.
+so one determiner, 0 or more adjectives, and 1 or more nouns for an existing file inputted by the user. The program takes into account the different adjective and noun tags in nltk's POS-tagger.
 
 Furthermore, this program outputs a table with the type of sequence found, sequence frequency, and the top n-most frequent occurences of this sequence (based on a user input between 1 and 10).
 
