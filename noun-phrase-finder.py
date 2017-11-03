@@ -1,27 +1,6 @@
 ####################################################################
 #                       FRANCESCA RAMUNNO                          #
-#                           T00053082                              #
-#                          Homework #3                             #
-#                         COMP 4980-04                             #
-#                                                                  #                                                           #
-# This program takes input for a file name and a number N,         #
-#  which will be used to get the top-N frequencies of              #
-# each occurence of each sequence type found in the given file.    #
-# Furthermore, this program will take all occurences found         #
-# and place them in a text file called all_occurences.txt with the #
-# sequence type at the top, followed by the occurences of that type.#
-# (If you are interested in that information....)                   #
-#                                                                  #
-# It also prints out the number of times each sequence type occurs.#
-# (of course)                                                      #
-#                                                                  #
-# For basic stats, I printed the token count, the sentence count,  #
-#  N and the number of noun phrases found.                         #
-#  Nothing else really seemed that relevant.                       #
-#                                                                  #
-# It is required to have Texttable module installed to run this    #
-# program.                                                         #
-#                                                                  #
+#                  NOUN PHRASE COUNTER AND FINDER                  #
 ####################################################################
 
 import nltk as nltk
@@ -77,7 +56,7 @@ def get_sequences(pos_tag_sentence, nouns, adjectives):
                     tag_sequence = ["DT"]
                     # keep going until there are no more adjectives
                     while next_tag in adjectives:
-                        tag_sequence.append("ADJ")
+                        tag_sequence.append(next_tag)
                         if index == len(pos_tag_sentence) - 1:
                             # dont add if the determiner adjective* not followed by a noun, get out
                             break
@@ -98,7 +77,7 @@ def get_sequences(pos_tag_sentence, nouns, adjectives):
                         to_add = [word]
                         tag_sequence = ["DT"]
                     while next_tag in nouns:
-                        tag_sequence.append("NOUN")
+                        tag_sequence.append(next_tag)
                         if start_index == len(pos_tag_sentence) - 1:
                             # if we are at the end of the sentence, add the sequence and get out
                             to_add.append(pos_tag_sentence[start_index][0])
@@ -222,6 +201,11 @@ print("")
 print("Note that DT=determiner, Adj=adjective, and Noun=noun(of course)")
 table.align = "l"
 print(table.draw())
+
+
+
+
+
 
 
 
