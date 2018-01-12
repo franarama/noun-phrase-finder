@@ -1,6 +1,6 @@
 # noun-phrase-finder
 
-This program utilities nltk to find the frequencies of noun phrases of the form:
+This program utilizes nltk to find the frequencies of noun phrases of the form:
 
 determiner adjective* noun+
 
